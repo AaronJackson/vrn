@@ -60,7 +60,7 @@ Usage:
 
  Begin by downloading the Torch model from:
 
-   http://cs.nott.ac.uk/~psxasj/downloads/vrn-unguided.t7
+   http://cs.nott.ac.uk/~psxasj/download.php?file=vrn-unguided.t7
 
  The easiest way to begin is to execute the run file from within
  MATLAB. There are some example images included in the examples
