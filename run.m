@@ -30,6 +30,9 @@ for f=1:numel(vols)
 
     rendervol([input_folder fname '.jpg'], ...
               [output_folder fname '.raw']);
+    rotate3d
 
     fprintf('Rendered %s.\n', fname);
 end
+
+fprintf('All images rendered.\n');
