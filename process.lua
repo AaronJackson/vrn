@@ -19,13 +19,13 @@ for fname in paths.iterfiles(opt.input .. '/', '*.jpg') do
    local img = image.load(opt.input .. '/' .. fname .. '.jpg')
    img = image.crop(img, 'c', 384, 384)
    img = image.scale(img, 192, 192)
-
    img = img:view(1,3,192,192):cuda()
-   output = net:forward(img)
 
-   vol = (output[1]*255):byte()
+   local output = net:forward(img)
 
-   out = torch.DiskFile(opt.output .. '/' .. fname .. '.raw', 'w')
+   local vol = (output[1]*255):byte()
+
+   local out = torch.DiskFile(opt.output .. '/' .. fname .. '.raw', 'w')
    out:binary()
    out:writeByte(vol:storage())
    out:close()
