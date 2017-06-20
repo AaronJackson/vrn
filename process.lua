@@ -13,7 +13,7 @@ opt = cmd:parse(arg or {})
 
 net = torch.load(opt.model):cuda()
 
-for fname in paths.files(opt.input .. '/') do
+for fname in paths.iterfiles(opt.input .. '/', '*.jpg') do
    fname = string.sub(fname, 1, -5)
 
    local img = image.load(opt.input .. '/' .. fname .. '.jpg')
@@ -30,5 +30,5 @@ for fname in paths.files(opt.input .. '/') do
    out:writeByte(vol:storage())
    out:close()
 
-   print('Processed ' .. filename)
+   io.write('Processed ' .. fname .. '.\n')
 end

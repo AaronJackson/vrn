@@ -21,10 +21,16 @@ List of files:
 
  ./README           This file explaining how to run the code.
  ./vrn.t7           The CNN model for Torch7.
- ./test.lua         Torch script for running reconstruction.
- ./read_raw.m       MATLAB function for reading loading volumes.
- ./render.m         MATLAB script to plot the results.
+ ./process.lua      Torch script for running reconstruction.
+ ./readvol.m        MATLAB function for reading loading volumes.
+ ./rendervol.m      MATLAB script to plot the results.
 
+Description:
+
+ This is an unguided version of the Volumetric Regress Network (VRN)
+ for 3D face reconstruction from a single image. This method
+ approaches the problem as a segmentation problem, producing a 3D
+ volume which is spatially aligned with the input image.
 
 Requirements:
 
@@ -45,13 +51,13 @@ Requirements:
 
 Usage:
 
- Assuming you have the dependencies installed correctly, you should be
- able to run "./th test.lua" and it will process the included example
- images.
+ Begin by downloading the Torch model from:
 
- Once the images are processed, which should only take a few seconds,
- the "render.m" script can be called from MATLAB, which will render
- the 3D face on top of the input image.
+   http://cs.nott.ac.uk/~psxasj/downloads/vrn-unguided.t7
+
+ The easiest way to begin is to execute the run file from within
+ MATLAB. There are some example images included in the examples
+ directory, but you are welcome to try your own.
 
 
 Using your own images:
@@ -63,8 +69,6 @@ Using your own images:
 
  All images are given to the network as 192x192, so it would be best
  to make sure your image is square before passing it to the network.
-
-
 
 ======================================================================
 
