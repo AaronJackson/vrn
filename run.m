@@ -10,6 +10,8 @@ output_folder = 'output/';
 model_file = 'vrn-unguided.t7';
 gpunum = 0;
 
+mkdir(output_folder)
+
 % Run the Lua script to process the images and produce the 3D volumes.
 retval = system(['CUDA_VISIBLE_DEVICES=' num2str(gpunum) ...
                     'th ' pwd '/process.lua' ...
