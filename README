@@ -58,9 +58,7 @@ Requirements:
 
 Usage:
 
- Begin by downloading the Torch model from:
-
-   http://cs.nott.ac.uk/~psxasj/download.php?file=vrn-unguided.t7
+ Run ./download.sh to download the network model.
 
  The easiest way to begin is to execute the run file from within
  MATLAB. There are some example images included in the examples
