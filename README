@@ -37,6 +37,13 @@ Description:
  like, you can download the dataset from their website and process all
  of the images in one go.
 
+ The only difference between this and the method described in the
+ paper is that our network was trained with hollow mouths. We feel
+ this makes the output look a little more realisitc. If you would like
+ a model trained to produce the mouth filled in (as shown in the
+ figures in the paper), please let Aaron know and we will provide
+ this.
+
 Requirements:
 
  A working installation of Torch7 is required. This can be installed
