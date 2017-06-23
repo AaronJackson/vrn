@@ -10,6 +10,7 @@ output_folder = 'output/';
 model_file = 'vrn-unguided.t7';
 gpunum = 0;
 
+% Make sure the output directory exists.
 if ~exist(output_folder, 'dir')
     mkdir(output_folder)
 end
@@ -33,7 +34,7 @@ for f=1:numel(vols)
 
     rendervol([input_folder fname '.jpg'], ...
               [output_folder fname '.raw']);
-    rotate3d
+    rotate3d % allow dragging in 3D.
 
     fprintf('Rendered %s.\n', fname);
 end
