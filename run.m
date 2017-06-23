@@ -10,7 +10,9 @@ output_folder = 'output/';
 model_file = 'vrn-unguided.t7';
 gpunum = 0;
 
-mkdir(output_folder)
+if ~exist(output_folder, 'dir')
+    mkdir(output_folder)
+end
 
 % Run the Lua script to process the images and produce the 3D volumes.
 retval = system(['CUDA_VISIBLE_DEVICES=' num2str(gpunum) ...
@@ -22,7 +24,6 @@ retval = system(['CUDA_VISIBLE_DEVICES=' num2str(gpunum) ...
 if retval ~= 0
     error('Failed to run Torch7 script.')
 end
-
 
 % Visualise the output from VRN.
 vols = dir([output_folder '/*.raw']);
