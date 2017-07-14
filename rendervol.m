@@ -8,6 +8,7 @@ im = im(33:32+384, 33:32+384, :);
 im = imresize(im, [192 192]);
 
 Q = isosurface(vol);
+Q.vertices(:,3) = Q.vertices(:,3) * 0.5;
 Q.EdgeColor = 'none';
 Q.FaceColor = [120 154 194]/255;
 
