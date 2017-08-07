@@ -36,7 +36,7 @@ for f=1:numel(vols)
     fname = vols(f).name(1:end-4);
 
     rendervol([input_folder fname '.jpg'], ...
-              [output_folder fname '.raw']);
+              [output_folder fname '.raw'], texture);
     rotate3d % allow dragging in 3D.
 
     fprintf('Rendered %s.\n', fname);
