@@ -8,7 +8,9 @@ clear all, close all, clc
 input_folder = 'examples/';
 output_folder = 'output/';
 model_file = 'vrn-unguided.t7';
-gpunum = 0;
+gpunum = 1;
+texture = 0; % rudimentary texture mapping
+
 
 % Make sure the output directory exists.
 if ~exist(output_folder, 'dir')
