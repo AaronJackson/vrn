@@ -47,6 +47,12 @@ Requirements:
  the isosurface of the 3D volume, but other raw volumetric rendering
  programs also exist, which could be used instead.
 
+ For best results, we first scale the input face. To do this, we
+ include Bulat's recent ICCV face alignment code as a submodule. This
+ has its own set of dependencies, and these can be viewed here:
+
+   https://github.com/1adrianb/2D-and-3D-face-alignment/
+
  This project was developed on Fedora 23. It should work on any other
  distribution of Linux. I have no idea if it will work on Windows.
 
