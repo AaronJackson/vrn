@@ -58,6 +58,8 @@ Requirements:
 
 Usage:
 
+ Run "git submodule update" to pull the code for landmark detector.
+
  Run ./download.sh to download the network model.
 
  The easiest way to begin is to execute the run file from within
