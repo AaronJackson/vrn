@@ -8,7 +8,7 @@ clear all, close all, clc
 input_folder = 'examples/';
 output_folder = 'output/';
 model_file = 'vrn-unguided.t7';
-gpunum = 1;
+gpunum = 0;
 texture = 0; % rudimentary texture mapping
 
 % Make sure the output directory exists.
@@ -41,7 +41,11 @@ end
 pts = dir([input_folder '*.txt']);
 for p=1:numel(pts)
     P = load([input_folder pts(p).name]);
-    imName = [input_folder pts(p).name(1:end-4) '.jpg'];
+    if exist([input_folder pts(p).name(1:end-4) '.jpg'], 'file')
+        imName = [input_folder pts(p).name(1:end-4) '.jpg'];
+    else
+        imName = [input_folder pts(p).name(1:end-4) '.png'];
+    end
     imNameD = [input_folder '/scaled/' pts(p).name(1:end-4) '.jpg'];
     I = imread(imName);
     scale = 90/sqrt(prod(max(P)-min(P)));
