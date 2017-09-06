@@ -1,5 +1,7 @@
 * Large Pose 3D Face Reconstruction from a Single Image via Direct Volumetric Regression
 
+[[http://aaronsplace.co.uk/papers/jackson2017recon/preview.png]]
+
 Please visit our [[http://aaronsplace.co.uk/papers/jackson2017recon/][project webpage]] for a link to the paper and an
 example video run on 300VW. This code is licenses under the MIT
 License, as described in the LICENSE file.
