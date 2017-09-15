@@ -26,7 +26,7 @@ and a script (run.m) is provided to simplify the execution.
 
 This project was developed under Linux. I have no idea if it will work
 on Windows and it is unlikely that I will be able to help you with
-this.
+this. If you are running Mac OS, [[https://github.com/AaronJackson/vrn/issues/1][issue #1]] might be of interest to you.
 
 Quick overview of requirements:
 
