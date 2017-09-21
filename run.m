@@ -8,7 +8,7 @@ clear all, close all, clc
 input_folder = 'examples/';
 output_folder = 'output/';
 model_file = 'vrn-unguided.t7';
-gpunum = 0;
+gpunum = 0; % set to -1 for cpu
 texture = 0; % rudimentary texture mapping
 
 % Make sure the output directory exists.
@@ -19,6 +19,9 @@ if ~exist([input_folder '/scaled'], 'dir')
     mkdir([input_folder '/scaled'])
 end
 
+device = 'gpu'
+if gpunum == -1, device = 'cpu', end
+
 % Begin my running a face detector and face alignment to scale the
 % image correctly.
 retval = system(['cd face-alignment;' ...
@@ -28,6 +31,7 @@ retval = system(['cd face-alignment;' ...
                  ' -detectFaces true' ...
                  ' -mode generate' ...
                  ' -output ../' input_folder ...
+                 ' -device ' device ...
                  ' -outputFormat txt 2>&1 > /dev/null;']);
 
 if retval ~= 0
@@ -63,7 +67,8 @@ retval = system(['CUDA_VISIBLE_DEVICES=' num2str(gpunum) ...
                  ' th ' pwd '/process.lua' ...
                  ' --model ' model_file ...
                  ' --input ' input_folder '/scaled/' ...
-                 ' --output ' output_folder]);
+                 ' --output ' output_folder ...
+                 ' --device ' device]);
 
 if retval ~= 0
     error('Failed to run Torch7 script.')
