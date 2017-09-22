@@ -20,7 +20,7 @@ mkdir -p $INPUT/scaled
 # goes wrong. Adrian's landmark detector may give warnings about
 # certain packages being unavailable (e.g. libmatio), but they are not
 # required.
-# pushd face-alignment > /dev/null
+pushd face-alignment > /dev/null
 th main.lua -model 2D-FAN-300W.t7 \
    -input ../$INPUT/ \
    -detectFaces true \
