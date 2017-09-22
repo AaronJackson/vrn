@@ -1,5 +1,7 @@
 * Large Pose 3D Face Reconstruction from a Single Image via Direct Volumetric Regression
 
+*Aaron S. Jackson, Adrian Bulat, Vasileios Argyriou and Georgios Tzimiropoulos*
+
 *Try out the code without running it!* Check out our online demo [[http://www.cs.nott.ac.uk/~psxasj/3dme/][here]].
 
 [[http://aaronsplace.co.uk/papers/jackson2017recon/preview.png]]
