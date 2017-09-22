@@ -31,7 +31,7 @@ this. If you are running Mac OS, [[https://github.com/AaronJackson/vrn/issues/1]
 
 Quick overview of requirements:
 
-- Torch7 (+ nn, cunn, cudnn, image)
+- Torch7 (+ nn, cunn, cudnn, image). See "Installation Example" below.
 - NVIDIA GPU, with a working CUDA installation and CuDNN.
 - Either,
   - MATLAB
@@ -99,4 +99,46 @@ change. Here is a very quick description of them:
 
 
 
+
+
+* Installation Example
+
+I've had a few requests to describe a little better how to configure
+Torch so that everything works correctly. I've tested this on Fedora 24
+and CentOS 7. I'm assuming it will also work on Ubuntu if you have the
+correct development packages installed.
+
+#+BEGIN_SRC bash
+# Install some dependencies for later. I might have missed some
+sudo yum install glog-devel boost-devel
+pip install dlib matplotlib numpy visvis imageio
+
+# Install the Torch distribution.
+mkdir -p $HOME/usr/{local,src}
+cd $HOME/usr/local
+git clone https://github.com/torch/distro.git
+mv distro torch
+cd torch
+sudo ./install-deps
+./install.sh
+source $HOME/usr/local/torch/install/bin/torch-activate
+
+# Install THPP and fb.python for the face alignment code
+cd $HOME/usr/src
+git clone https://github.com/1adrianb/thpp.git
+cd thpp/thpp
+THPP_NOFB=1 ./build.sh
+
+# Install fb.python.
+cd $HOME/usr/src
+git clone https://github.com/facebook/fblualib.git
+cd fblualib/fblualib/python
+luarocks make rockspec/*
+
+cd $HOME
+git clone https://github.com/AaronJackson/vrn.git
+cd vrn
+./download.sh
+./run.sh
+#+END_SRC
 
