@@ -1,5 +1,3 @@
-#imageio, numpy, visvis
-
 import numpy as np
 import visvis as vv
 import argparse
@@ -14,6 +12,10 @@ parser.add_argument('--texture', dest='texture',
 
 args = parser.parse_args()
 
+# Worth mentioning that the Z component (axis=0) is twice as deep as
+# the X and Y components are wide/tall. I'm going to leave these
+# unscaled for now, but if you know how to scale the mesh from
+# showvol, I would love to know.
 vol = np.fromfile(args.volume, dtype=np.int8)
 vol = vol.reshape((200,192,192))
 
@@ -22,7 +24,14 @@ im = vv.imread(args.image)
 t = vv.imshow(im)
 t.interpolate = True # interpolate pixels
 
-v = vv.volshow(vol, renderStyle='iso')
+# volshow will use volshow3 and rendering the isosurface if OpenGL
+# version is >= 2.0. Otherwise, it will show slices with bars that you
+# can move (much less useful).
+volRGB = np.stack(((vol > 1) * im[:,:,0],
+                   (vol > 1) * im[:,:,1],
+                   (vol > 1) * im[:,:,2]), axis=3)
+
+v = vv.volshow(volRGB, renderStyle='iso')
 
 l0 = vv.gca()
 l0.light0.ambient = 0.9 # 0.2 is default for light 0
