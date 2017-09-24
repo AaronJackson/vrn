@@ -60,11 +60,14 @@ ls -1 *.txt | \
 
 # And now using ImageMagick convert we will crop the faces.
 cat crop.tmp | sed 's/.txt/.jpg/' | \
-     while read fname x y scale; do
-	 convert $fname \
-		 -scale $scale% \
-		 -crop 192x192+$x+$y \
-		 scaled/$fname
+    while read fname x y scale; do
+	convert $fname \
+		-scale $scale% \
+		-crop 192x192+$x+$y \
+		-background white \
+		-gravity center \
+		-extent 192x192 \
+		scaled/$fname
 	 echo "Cropped and scaled $fname"
      done
 
