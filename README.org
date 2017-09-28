@@ -136,7 +136,7 @@ cd fblualib/fblualib/python
 luarocks make rockspec/*
 
 cd $HOME
-git clone https://github.com/AaronJackson/vrn.git
+git clone --recursive https://github.com/AaronJackson/vrn.git
 cd vrn
 ./download.sh
 ./run.sh
