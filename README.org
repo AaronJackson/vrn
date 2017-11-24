@@ -41,7 +41,7 @@ Quick overview of requirements:
   - MATLAB
   - bash, ImageMagick, GNU awk, Python 2.7 (+ visvis, imageio, numpy)
 
-Please me wary of the version numbers for CUDA, CuDNN and Python.
+Please be wary of the version numbers for CUDA, CuDNN and Python.
 
 Bulat's [[https://github.com/1adrianb/2D-and-3D-face-alignment/][face alignment]] code is included as a submodule. Please check
 his README for dependencies.
