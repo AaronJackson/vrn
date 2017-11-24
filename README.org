@@ -36,10 +36,12 @@ this. If you are running Mac OS, [[https://github.com/AaronJackson/vrn/issues/1]
 Quick overview of requirements:
 
 - Torch7 (+ nn, cunn, cudnn, image). See "Installation Example" below.
-- NVIDIA GPU, with a working CUDA installation and CuDNN.
+- NVIDIA GPU, with a working CUDA (7.5 or 8.0) and CuDNN (5.1).
 - Either,
   - MATLAB
   - bash, ImageMagick, GNU awk, Python 2.7 (+ visvis, imageio, numpy)
+
+Please me wary of the version numbers for CUDA, CuDNN and Python.
 
 Bulat's [[https://github.com/1adrianb/2D-and-3D-face-alignment/][face alignment]] code is included as a submodule. Please check
 his README for dependencies.
