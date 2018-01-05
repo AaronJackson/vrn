@@ -114,6 +114,8 @@ Torch so that everything works correctly. I've tested this on Fedora 24
 and CentOS 7. I'm assuming it will also work on Ubuntu if you have the
 correct development packages installed.
 
+If you prefer docker, simply run `docker build -t 'vrn' .`. For an interactive shell, `docker run -it vrn bash`. Commands may require sudo.
+
 #+BEGIN_SRC bash
 # Install some dependencies for later. I might have missed some
 sudo yum install glog-devel boost-devel
@@ -158,4 +160,3 @@ cd vrn
   year={2017}
 }
 #+END_SRC
-
