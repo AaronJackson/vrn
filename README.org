@@ -23,6 +23,23 @@ If you are running the code to calculate error for a potential
 publication, please use the MATLAB version, as this is what was used
 to compute the error for the paper.
 
+** Prebuilt Docker Image for CPU version
+
+I have released an image on Docker Hub which has everything to get the
+CPU version running under Docker. I'll extend this to have CUDA
+support at some point.
+
+#+BEGIN_SRC
+docker pull asjackson/vrn:latest
+docker run -v $(pwd)/data:/data:Z vrn /runner/run.sh /data/turing.jpg
+#+END_SRC
+
+The repo holding this is available at [[https://github.com/AaronJackson/vrn-docker][vrn-docker]] and the models (which
+have been cast to CPU floats already) are stored in Git LFS. If you
+have an issue with this docker container, please use the vrn-docker
+issue tracker rather than the vrn issue tracker.
+
+
 ** Software Requirements
 
 A working installation of Torch7 is required. This can be easily
