@@ -2,7 +2,8 @@
 
 *Aaron S. Jackson, Adrian Bulat, Vasileios Argyriou and Georgios Tzimiropoulos*
 
-*Try out the code without running it!* Check out our online demo [[http://www.cs.nott.ac.uk/~psxasj/3dme/][here]].
+*Try out the code without running it!* Check out our online demo [[https://vrn.aaronsplace.co.uk][here]]. Alternatively,
+pull the DockerHub image `asjackson:vrn`, see docs in the [[https://github.com/AaronJackson/vrn-docker][vrn-docker]] repo. 
 
 [[http://aaronsplace.co.uk/papers/jackson2017recon/preview.png]]
 
@@ -35,7 +36,7 @@ docker run -v $(pwd)/data:/data:Z vrn /runner/run.sh /data/turing.jpg
 #+END_SRC
 
 The repo holding this is available at [[https://github.com/AaronJackson/vrn-docker][vrn-docker]] and the models (which
-have been cast to CPU floats already) are stored in Git LFS. If you
+have been cast to CPU floats already) were stored in Git LFS but took too much space. If you
 have an issue with this docker container, please use the vrn-docker
 issue tracker rather than the vrn issue tracker.
 
