@@ -8,7 +8,7 @@ pull the DockerHub image `asjackson:vrn`, see docs in the [[https://github.com/A
 [[http://aaronsplace.co.uk/papers/jackson2017recon/preview.png]]
 
 Please visit our [[http://aaronsplace.co.uk/papers/jackson2017recon/][project webpage]] for a link to the paper and an
-example video run on 300VW. This code is licenses under the MIT
+example video run on 300VW. This code is licensed under the MIT
 License, as described in the LICENSE file.
 
 This is an unguided version of the Volumetric Regression Network (VRN)
@@ -20,7 +20,7 @@ obtained by taking the isosurface of this volume.
 Several example images are included in the examples folder. Most of
 these are AFLW images taken from [[http://www.cbsr.ia.ac.cn/users/xiangyuzhu/projects/3DDFA/main.htm][3DDFA]].
 
-If you are running the code to calculate error for a potential
+If you are running the code to calculate an error for a potential
 publication, please use the MATLAB version, as this is what was used
 to compute the error for the paper.
 
@@ -59,7 +59,7 @@ Quick overview of requirements:
   - MATLAB
   - bash, ImageMagick, GNU awk, Python 2.7 (+ visvis, imageio, numpy)
 
-Please be wary of the version numbers for CUDA, CuDNN and Python.
+Please be wary of the version numbers for CUDA, CuDNN, and Python.
 
 Bulat's [[https://github.com/1adrianb/2D-and-3D-face-alignment/][face alignment]] code is included as a submodule. Please check
 his README for dependencies.
@@ -84,10 +84,10 @@ To run, type "run" from MATLAB.
 
 No longer is MATLAB an absolute requirement! I've included a slightly
 crazy (but don't worry, I had fun writing it) shell script which
-performs the face normalisation, and runs the ~vis.py~ script to
+performs the face normalization, and runs the ~vis.py~ script to
 render the regressed volume.
 
-Unfortunately this does not yet apply any colouring or texture to the
+Unfortunately, this does not yet apply any colouring or texture to the
 mesh (you're welcome to contribute) and it has some issues if you
 don't have a fully working OpenGL setup. Some GPUs won't like the
 background image not being a power of two, so it might make the
